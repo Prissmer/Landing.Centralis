@@ -211,7 +211,7 @@ function App() {
           >
             <h2 className="h2">How it works</h2>
             <p className="text-lg" style={{ marginTop: '16px' }}>
-              A straightforward process designed to get you to your resources faster.
+              A straightforward process designed to get you to your resources and submit your requirements faster.
             </p>
           </motion.div>
 
