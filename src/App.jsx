@@ -206,7 +206,7 @@ function App() {
                 icon: Search,
                 num: '04',
                 title: 'Search and Document Retrieval',
-                desc: 'Enables users to locate and retrieve documents using search criteria such as document type, course, or semester etc.',
+                desc: 'Enables users to locate and retrieve documents using search criteria such as document type, course, semester, etc.',
               },
               {
                 icon: Archive,
