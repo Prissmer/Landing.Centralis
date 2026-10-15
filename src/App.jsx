@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Menu, X, BookOpen, 
+  ArrowRight, Menu, X,
   FolderOpen, Search, 
-  Laptop, Smartphone, ClipboardCheck
+  Laptop, Smartphone, ClipboardCheck,
+  Settings2, Archive, ShieldCheck
 } from 'lucide-react';
 import dashboardImg from './assets/dashboard.png';
 import logoImg from './assets/logo.png';
@@ -168,31 +169,67 @@ function App() {
             custom={0}
             variants={fadeUp}
           >
-            <h2 className="h2">Everything your faculty resources need.</h2>
+            <div className="section-eyebrow">Core Capabilities</div>
+            <h2 className="h2">Everything your faculty needs, <span className="text-gradient">all in one system.</span></h2>
             <p className="text-lg" style={{ marginTop: '16px' }}>
-              Built specifically for academic environments to streamline how you access and manage your materials.
+              Built specifically for academic environments to streamline how faculty submit, track, and manage documents—and how administrators monitor compliance.
             </p>
           </motion.div>
 
           <motion.div 
-            className="features-grid"
+            className="features-grid-6"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-80px" }}
             variants={staggerContainer}
           >
             {[
-              { icon: FolderOpen, title: 'Centralized Documents', desc: 'Keep academic documents and relevant faculty files organized in one place for quick retrieval.' },
-              { icon: BookOpen, title: 'Teaching Materials', desc: 'Access teaching references, lecture materials, and educational resources effortlessly.' },
-              { icon: Search, title: 'Search & Discovery', desc: 'Help faculty locate materials instantly using the powerful built-in search functionality.' },
-              { icon: ClipboardCheck, title: 'Requirement Verification', desc: 'Administrators can easily check and verify all requirements submitted by users in real-time.' }
+              {
+                icon: FolderOpen,
+                num: '01',
+                title: 'Centralized Digital Document Repository',
+                desc: 'Allows faculty members to upload, store, organize, and access academic documents and professional records in one centralized location.',
+              },
+              {
+                icon: ClipboardCheck,
+                num: '02',
+                title: 'Submission Monitoring & Compliance Tracking',
+                desc: 'Tracks faculty document submissions and identifies missing, incomplete, and late submissions so authorized users can monitor departmental compliance.',
+              },
+              {
+                icon: Settings2,
+                num: '03',
+                title: 'Dynamic Requirement Management',
+                desc: 'Allows authorized users to add, modify, and customize document submission requirements and set deadlines for each semester—no fixed lists required.',
+              },
+              {
+                icon: Search,
+                num: '04',
+                title: 'Search and Document Retrieval',
+                desc: 'Enables users to locate and retrieve documents using search criteria such as faculty name, document type, course, or semester.',
+              },
+              {
+                icon: Archive,
+                num: '05',
+                title: 'File Archiving and Record Management',
+                desc: 'Organizes and preserves academic documents and faculty records for future reference, with archived files managed separately from current documents.',
+              },
+              {
+                icon: ShieldCheck,
+                num: '06',
+                title: 'Role-Based Access Control and Security',
+                desc: 'Restricts system access and actions according to user roles and permissions, protecting academic documents and faculty records from unauthorized access.',
+              },
             ].map((feature, i) => (
-              <motion.div className="feature-card" key={i} variants={childVariant}>
-                <div className="feature-icon-wrapper">
-                  <feature.icon size={24} />
+              <motion.div className="feature-card-v2" key={i} variants={childVariant}>
+                <div className="feature-card-top">
+                  <div className="feature-icon-wrapper-v2">
+                    <feature.icon size={22} />
+                  </div>
+                  <span className="feature-number">{feature.num}</span>
                 </div>
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-desc">{feature.desc}</p>
+                <h3 className="feature-title-v2">{feature.title}</h3>
+                <p className="feature-desc-v2">{feature.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -223,10 +260,11 @@ function App() {
             variants={staggerContainer}
           >
             {[
-              { num: 1, title: 'Admin Invitation', desc: 'Administrators initiate access by inviting users directly via their Gmail addresses.' },
-              { num: 2, title: 'Accept & Register', desc: 'Users accept the email invitation and complete a setup form to gain system access.' },
-              { num: 3, title: 'Submit Requirements', desc: 'Users securely submit their academic documents and required materials into the repository.' },
-              { num: 4, title: 'Admin Verification', desc: 'Administrators can seamlessly review, track, and verify all submitted requirements.' }
+              { num: 1, title: 'Admin Invitation', desc: 'Administrators invite faculty members through their Gmail addresses.' },
+              { num: 2, title: 'Accept & Register', desc: 'Users accept the email invitation and complete the account setup form.' },
+              { num: 3, title: 'Admin Approval', desc: 'After successful setup, the user sees a confirmation message stating that their account is waiting for admin approval. The account appears as Pending Approval in User Management, where the administrator can approve or decline it.' },
+              { num: 4, title: 'Submit Requirements', desc: 'Once approved, faculty members can log in and submit their required academic documents and professional records.' },
+              { num: 5, title: 'Admin Verification', desc: 'Administrators verify submitted documents and monitor their completion and compliance status.' },
             ].map((step, i) => (
               <motion.div className="step-card" key={i} variants={childVariant}>
                 <div className="step-number">{step.num}</div>
@@ -342,6 +380,17 @@ function App() {
                 <a href="#features" className="footer-link">Features</a>
                 <a href="#how-it-works" className="footer-link">How It Works</a>
                 <a href="#download" className="footer-link">Download</a>
+              </div>
+            </div>
+            <div>
+              <h4 className="footer-title">Features</h4>
+              <div className="footer-links">
+                <a href="#features" className="footer-link">Document Repository</a>
+                <a href="#features" className="footer-link">Compliance Tracking</a>
+                <a href="#features" className="footer-link">Requirement Management</a>
+                <a href="#features" className="footer-link">Search &amp; Retrieval</a>
+                <a href="#features" className="footer-link">File Archiving</a>
+                <a href="#features" className="footer-link">Access Control</a>
               </div>
             </div>
             <div>
